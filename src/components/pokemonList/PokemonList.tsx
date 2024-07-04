@@ -20,26 +20,38 @@ const PokemonList = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Pokedex</h1>
-      <div>
+    <div className="container mx-auto px-4 py-8">
+      <div className="flex flex-col justify-center items-center min-h-screen">
         {loading ? (
-          <div>
-            <p>데이터를 불러오는 중입니다..!</p>
+          <div className="flex flex-col items-center">
+            <div className="loader ease-linear rounded-full border-8 border-t-8 border-gray-200 h-32 w-32 mb-4 animate-spin"></div>
+            <p className="text-xl font-bold text-gray-700">
+              데이터를 불러오는 중입니다..!
+            </p>
           </div>
         ) : (
-          <div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {getPokemon.map((pokemon) => (
-              <div key={pokemon.id}>
-                <Link href={`/pokemon/${pokemon.id}`}>
-                  <Image
-                    src={pokemon.sprites.front_default}
-                    alt={pokemon.korean_name}
-                    width={80}
-                    height={80}
-                  />
-                  <p>{pokemon.korean_name}</p>
-                  <p>도감번호: {pokemon.id}</p>
+              <div
+                key={pokemon.id}
+                className="bg-white p-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out"
+              >
+                <Link href={`/pokemon/${pokemon.id}`} className="block">
+                  <div className="flex justify-center mb-3">
+                    <Image
+                      src={pokemon.sprites.front_default}
+                      alt={pokemon.korean_name}
+                      width={100}
+                      height={100}
+                      className="transform hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <p className="text-lg font-semibold text-center text-gray-800 mb-1">
+                    {pokemon.korean_name}
+                  </p>
+                  <p className="text-sm text-center text-gray-600">
+                    도감No. {pokemon.id}
+                  </p>
                 </Link>
               </div>
             ))}
