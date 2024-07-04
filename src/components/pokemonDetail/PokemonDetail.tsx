@@ -18,10 +18,11 @@ import React from "react";
 // }
 
 const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
+  // 상단에 주석 처리한 interface Props의 객체 변수를 사용하고 싶으면
+  // const PokemonDetail = ({ pokemonData }: Props}) 로 작성해주면 된다.
   if (!pokemonData) {
     return (
       <div>
-        {/* <Image src={"/public/monsterball.gif"} alt="몬스터볼 던지기" /> */}
         <p>몬스터볼 던지는 중...</p>
       </div>
     );
@@ -100,6 +101,7 @@ const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
           </Link>
         </div>
       </div>
+      <button></button>
     </div>
   );
 };
