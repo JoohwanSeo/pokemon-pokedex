@@ -1,7 +1,12 @@
-import React from "react";
+"use client";
+import PokemonList from "@/components/pokemonList";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <>
+      <PokemonList />
+    </>
+  );
 };
 
 export default Home;
