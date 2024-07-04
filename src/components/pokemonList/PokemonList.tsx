@@ -19,6 +19,8 @@ const PokemonList = () => {
     basicData();
   }, []);
 
+  console.log(getPokemon[0]);
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="flex flex-col justify-center items-center min-h-screen">
