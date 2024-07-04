@@ -3,7 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const PokemonDetail = ({ pokemonData }: Pokemon) => {
+// interface Props {
+//   pokemonData: {
+//     id: number;
+//     name: string;
+//     korean_name: string;
+//     height: number;
+//     weight: number;
+//     sprites: { front_default: string };
+//     types: { type: { name: string; korean_name: string } }[];
+//     abilities: { ability: { name: string; korean_name: string } }[];
+//     moves: { move: { name: string; korean_name: string } }[];
+//   };
+// }
+
+const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
   if (!pokemonData) {
     return (
       <div>

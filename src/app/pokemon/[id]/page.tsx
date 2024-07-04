@@ -17,6 +17,7 @@ const DetailPage = async ({ params }: { params: { id: string } }) => {
   if (!data) {
     notFound();
   }
+  console.log(data);
   return (
     <>
       <PokemonDetail pokemonData={data} />
