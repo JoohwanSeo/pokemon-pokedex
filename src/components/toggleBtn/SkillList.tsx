@@ -12,7 +12,7 @@ interface Props {
   moves: Move[];
 }
 
-const SkillToggleButton: React.FC<Props> = ({ moves }) => {
+const SkillList: React.FC<Props> = ({ moves }) => {
   const [moveSkillList, setMoveSkillList] = useState<boolean>(false);
 
   const SkillToggleList = () => {
@@ -23,10 +23,11 @@ const SkillToggleButton: React.FC<Props> = ({ moves }) => {
     <div className="mb-10">
       <button
         onClick={SkillToggleList}
-        className="w-full bg-blue-600 text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-blue-700 transition duration-300 shadow-md flex justify-between items-center"
+        className="w-full bg-sky-400 text-white px-6 py-3 rounded-lg font-bold text-lg hover:bg-sky-500 transition duration-300 shadow-md flex justify-center  items-center"
       >
-        <span>기술</span>
-        <span className="text-2xl">{moveSkillList ? "▲" : "▼"}</span>
+        <h2 className="text-2xl font-bold text-white-800 mb-4 ">
+          기술 {moveSkillList ? "▲" : "▼"}
+        </h2>
       </button>
       {moveSkillList && (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
@@ -46,4 +47,4 @@ const SkillToggleButton: React.FC<Props> = ({ moves }) => {
   );
 };
 
-export default SkillToggleButton;
+export default SkillList;

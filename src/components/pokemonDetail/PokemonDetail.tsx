@@ -1,7 +1,7 @@
 import { Pokemon } from "@/types/pokemon.type";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import SkillList from "../toggleBtn/SkillList";
 
 // interface Props {
 //   pokemonData: {
@@ -20,6 +20,7 @@ import React from "react";
 const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
   // 상단에 주석 처리한 interface Props의 객체 변수를 사용하고 싶으면
   // const PokemonDetail = ({ pokemonData }: Props}) 로 작성해주면 된다.
+
   if (!pokemonData) {
     return (
       <div>
@@ -77,8 +78,8 @@ const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
           <h2 className="text-2xl font-bold text-blue-800 mb-4">타입</h2>
           <div className="flex flex-wrap gap-3">{Types()}</div>
         </div>
-        <div className="mb-10">
-          <h2 className="text-2xl font-bold text-blue-800 mb-4">기술</h2>
+        <SkillList moves={pokemonData.moves} />
+        {/* <div className="mb-10">
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {pokemonData.moves.map((move) => (
               <div
@@ -91,11 +92,11 @@ const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         <div className="mt-10 text-center">
           <Link
             href="/"
-            className="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transform hover:scale-105 transition duration-300 shadow-lg"
+            className="inline-block bg-sky-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-sky-600 transform hover:scale-105 transition duration-300 shadow-lg"
           >
             뒤로가기
           </Link>
