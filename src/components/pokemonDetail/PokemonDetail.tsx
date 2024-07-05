@@ -79,20 +79,7 @@ const PokemonDetail = ({ pokemonData }: { pokemonData: Pokemon }) => {
           <div className="flex flex-wrap gap-3">{Types()}</div>
         </div>
         <SkillList moves={pokemonData.moves} />
-        {/* <div className="mb-10">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {pokemonData.moves.map((move) => (
-              <div
-                key={move.move.name}
-                className="bg-white rounded-lg p-3 text-center shadow-md hover:shadow-lg hover:bg-blue-50 transition duration-300"
-              >
-                <p className="text-sm font-medium text-gray-800">
-                  {move.move.korean_name}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div> */}
+
         <div className="mt-10 text-center">
           <Link
             href="/"
